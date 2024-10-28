@@ -1,4 +1,4 @@
-package com.lht.lhtsharding;
+package com.lht.lhtsharding.engine;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

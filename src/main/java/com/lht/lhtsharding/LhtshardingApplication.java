@@ -1,7 +1,9 @@
 package com.lht.lhtsharding;
 
+import com.lht.lhtsharding.config.ShardingAutoConfiguration;
 import com.lht.lhtsharding.demo.User;
 import com.lht.lhtsharding.demo.UserMapper;
+import com.lht.lhtsharding.mybatis.ShardingMapperFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;
@@ -12,7 +14,7 @@ import org.springframework.context.annotation.Import;
 
 @SpringBootApplication
 @Import(ShardingAutoConfiguration.class)
-@MapperScan(value = "com.lht.lhtsharding.demo",factoryBean = ShardingMapperFactoryBean.class)
+@MapperScan(value = "com.lht.lhtsharding.demo", factoryBean = ShardingMapperFactoryBean.class)
 public class LhtshardingApplication {
 
     public static void main(String[] args) {
@@ -24,7 +26,7 @@ public class LhtshardingApplication {
 
     @Bean
     ApplicationRunner runner() {
-        return x->{
+        return x -> {
 
 
             for (int i = 1; i <= 10; i++) {
@@ -48,9 +50,9 @@ public class LhtshardingApplication {
         System.out.println(" ======> 4. test new find....");
         User user1 = userMapper.findById(id);
         System.out.println(" ======> result =" + user1);
-//            System.out.println(" ======> 5. test delete....");
-//            int delete = userMapper.deleteById(1);
-//            System.out.println(" ======> delete =" + delete);
+        System.out.println(" ======> 5. test delete....");
+        int delete = userMapper.deleteById(id);
+        System.out.println(" ======> delete =" + delete);
     }
 
 }

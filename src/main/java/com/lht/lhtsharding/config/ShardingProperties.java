@@ -1,4 +1,4 @@
-package com.lht.lhtsharding;
+package com.lht.lhtsharding.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

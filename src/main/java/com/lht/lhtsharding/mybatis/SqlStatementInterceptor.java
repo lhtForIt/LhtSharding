@@ -1,4 +1,4 @@
-package com.lht.lhtsharding;
+package com.lht.lhtsharding.mybatis;
 
 import com.lht.lhtsharding.demo.User;
 import lombok.extern.slf4j.Slf4j;

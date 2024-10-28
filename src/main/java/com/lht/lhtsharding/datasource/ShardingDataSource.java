@@ -1,6 +1,9 @@
-package com.lht.lhtsharding;
+package com.lht.lhtsharding.datasource;
 
 import com.alibaba.druid.pool.DruidDataSourceFactory;
+import com.lht.lhtsharding.engine.ShardingContext;
+import com.lht.lhtsharding.engine.ShardingResult;
+import com.lht.lhtsharding.config.ShardingProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 
@@ -34,6 +37,7 @@ public class ShardingDataSource extends AbstractRoutingDataSource {
     @Override
     protected Object determineCurrentLookupKey() {
         ShardingResult shardingResult = ShardingContext.get();
+        ShardingContext.remove();
         Object key = shardingResult == null ? null : shardingResult.getDataSourceName();
         log.info(" ========> determineCurrentLookupKey = " + key);
         return key;
