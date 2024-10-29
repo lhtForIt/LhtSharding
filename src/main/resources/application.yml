@@ -11,3 +11,13 @@ spring:
                 url: jdbc:mysql://47.108.190.202:3306/db1?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
                 username: root
                 password: root
+        tables:
+            user:
+                actualDataNodes: db0.user0,db0.user1,db0.user2,db1.user0,db1.user1,db1.user2
+                databaseStrategy:
+                    shardingColumn: id
+                    algorithmExpression: db${id % 2}
+                tableStrategy:
+                    shardingColumn: id
+                    algorithmExpression: user${id % 3}
+
