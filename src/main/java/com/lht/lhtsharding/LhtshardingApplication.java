@@ -1,8 +1,8 @@
 package com.lht.lhtsharding;
 
 import com.lht.lhtsharding.config.ShardingAutoConfiguration;
-import com.lht.lhtsharding.demo.User;
-import com.lht.lhtsharding.demo.UserMapper;
+import com.lht.lhtsharding.demo.model.User;
+import com.lht.lhtsharding.demo.mapper.UserMapper;
 import com.lht.lhtsharding.mybatis.ShardingMapperFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +29,7 @@ public class LhtshardingApplication {
         return x -> {
 
 
-            for (int i = 1; i <= 10; i++) {
+            for (int i = 1; i <= 60; i++) {
                 test(i);
             }
 

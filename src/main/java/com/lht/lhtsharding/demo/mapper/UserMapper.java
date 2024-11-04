@@ -1,5 +1,6 @@
-package com.lht.lhtsharding.demo;
+package com.lht.lhtsharding.demo.mapper;
 
+import com.lht.lhtsharding.demo.model.User;
 import org.apache.ibatis.annotations.*;
 
 /**

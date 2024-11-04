@@ -1,4 +1,4 @@
-package com.lht.lhtsharding.demo;
+package com.lht.lhtsharding.demo.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

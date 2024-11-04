@@ -1,10 +1,8 @@
 package com.lht.lhtsharding.mybatis;
 
-import com.fasterxml.jackson.databind.util.ClassUtil;
 import com.lht.lhtsharding.engine.ShardingContext;
 import com.lht.lhtsharding.engine.ShardingEngine;
 import com.lht.lhtsharding.engine.ShardingResult;
-import com.lht.lhtsharding.demo.User;
 import lombok.Setter;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;

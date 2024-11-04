@@ -20,4 +20,6 @@ spring:
                 tableStrategy:
                     shardingColumn: id
                     algorithmExpression: user${id % 3}
-
+logging:
+    level:
+        com.lht.sharding: debug
