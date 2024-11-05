@@ -20,6 +20,14 @@ spring:
                 tableStrategy:
                     shardingColumn: id
                     algorithmExpression: user${id % 3}
+            t_order:
+                actualDataNodes: db0.t_order0,db0.t_order1,db0.t_order2,db1.t_order0,db1.t_order1,db1.t_order2
+                databaseStrategy:
+                    shardingColumn: uid
+                    algorithmExpression: db${uid % 3}
+                tableStrategy:
+                    shardingColumn: id
+                    algorithmExpression: t_order${id % 3}
 logging:
     level:
         com.lht.sharding: debug
